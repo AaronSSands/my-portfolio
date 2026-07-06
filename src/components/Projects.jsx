@@ -3,25 +3,52 @@ import ProjectCard from "./ProjectCard";
 function Projects() {
   const projects = [
     {
-      title: "Task Manager",
+      category: "Software Development",
+
+      title: "Professional Portfolio",
+
+      status: "Completed",
+
       description:
-        "A React application for managing tasks with reusable components.",
-      technologies: "React, JavaScript, CSS",
-      link: "https://github.com/yourusername/task-manager",
+        "A responsive developer portfolio built with React and Vite. Includes dark mode, reusable components, and an integrated contact form.",
+
+      technologies: ["React", "JavaScript", "CSS", "Vite", "EmailJS"],
+
+      github: "https://github.com/AaronSSands/my-portfolio",
+
+      demo: "https://AaronSSands.github.io/my-portfolio/",
     },
 
     {
-      title: "Weather Dashboard",
-      description: "A weather application using API calls and dynamic data.",
-      technologies: "React, API, JavaScript",
-      link: "https://github.com/yourusername/weather-app",
+      category: "Cloud & Infrastructure",
+
+      title: "AWS Cloud Projects",
+
+      status: "In Progress",
+
+      description:
+        "Hands-on AWS projects focused on cloud services, deployment, architecture, and understanding scalable infrastructure.",
+
+      technologies: ["AWS", "Cloud Computing", "Networking"],
+
+      github: "#",
+
+      demo: "#",
     },
 
     {
-      title: "Portfolio Website",
-      description: "My personal developer portfolio built with React.",
-      technologies: "React, Vite, GitHub Pages",
-      link: "https://github.com/yourusername/my-portfolio",
+      category: "Networking",
+
+      title: "Networking Labs",
+
+      description:
+        "Practical networking exercises focused on infrastructure concepts, troubleshooting, and system communication.",
+
+      technologies: ["Networking", "Linux", "Security"],
+
+      github: "#",
+
+      demo: "#",
     },
   ];
 
@@ -33,10 +60,13 @@ function Projects() {
         {projects.map((project) => (
           <ProjectCard
             key={project.title}
+            category={project.category}
             title={project.title}
+            status={project.status}
             description={project.description}
             technologies={project.technologies}
-            link={project.link}
+            github={project.github}
+            demo={project.demo}
           />
         ))}
       </div>

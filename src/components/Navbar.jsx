@@ -1,16 +1,25 @@
 function Navbar({ darkMode, setDarkMode }) {
   return (
-    //Main navigation bar of the website, containing the site title, navigation links, and a button to toggle between dark and light mode.
     <nav className="navbar">
       <h2>Aaron Sands</h2>
 
-      <div>
+      <div className="nav-links">
+        <a href="#home">Home</a>
+
         <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#cloud">Cloud</a>
+
+        <a href="#education">Education</a>
+
         <a href="#projects">Projects</a>
+
         <a href="#contact">Contact</a>
 
         <button onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️ Light" : "🌙 Dark"}
+          {darkMode ? "☀️" : "🌙"}
         </button>
       </div>
     </nav>

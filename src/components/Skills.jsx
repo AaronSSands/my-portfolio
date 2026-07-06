@@ -1,27 +1,71 @@
+import { motion } from "framer-motion";
+
 function Skills() {
-  // Skills are stored as data so they can easily be updated later
-  const skills = [
-    "React",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Git",
-    "GitHub",
-    "Vite",
-    "Responsive Design",
-    "REST APIs",
+  const skillGroups = [
+    {
+      title: "Software Development",
+
+      skills: [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "REST APIs",
+        "Git & GitHub",
+      ],
+    },
+
+    {
+      title: "Cloud & Infrastructure",
+
+      skills: [
+        "AWS",
+        "Cloud Computing",
+        "Networking",
+        "Linux",
+        "Virtualization",
+        "Security Fundamentals",
+      ],
+    },
+
+    {
+      title: "Tools & Technologies",
+
+      skills: [
+        "VS Code",
+        "PowerShell",
+        "npm",
+        "Vite",
+        "Git",
+        "Chrome DevTools",
+      ],
+    },
   ];
 
   return (
     <section id="skills">
-      <h2>Skills</h2>
+      <h2>Skills & Technologies</h2>
 
-      <div className="skills-container">
-        // Creates a badge for each skill in the array
-        {skills.map((skill) => (
-          <span className="skill" key={skill}>
-            {skill}
-          </span>
+      <div className="skills-groups">
+        {skillGroups.map((group) => (
+          <motion.div
+            className="skill-card"
+            key={group.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3>{group.title}</h3>
+
+            <div className="skills-container">
+              {group.skills.map((skill) => (
+                <span className="skill" key={skill}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         ))}
       </div>
     </section>
