@@ -22,6 +22,10 @@ function App() {
 
       {/* Main content of the application */}
       <main>
+        <Hero />
+
+        <About />
+
         <Skills />
 
         <CloudJourney />
