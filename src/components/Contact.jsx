@@ -52,7 +52,7 @@ function Contact() {
 
   return (
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>Establish Connection</h2>
 
       <form onSubmit={handleSubmit}>
         <input

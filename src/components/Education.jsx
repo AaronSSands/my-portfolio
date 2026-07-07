@@ -30,7 +30,7 @@ function Education() {
 
   return (
     <section id="education">
-      <h2>Education & Learning</h2>
+      <h2>Training & Certifications</h2>
 
       <div className="project-grid">
         {learning.map((item) => (

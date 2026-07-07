@@ -1,8 +1,12 @@
-//Import reusable compnents
+// Import reusable components
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
+import SystemStatus from "./components/SystemStatus";
+import MouseGlow from "./components/MouseGlow";
+
 import Hero from "./components/Hero";
+import Dashboard from "./components/Dashboard";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import CloudJourney from "./components/CloudJourney";
@@ -12,17 +16,25 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  //Controls whether the website is displayed in dark or light mode. The default is light mode.
-  const [darkMode, setDarkMode] = useState(false);
+  // Controls whether the website is displayed in dark or light mode.
+  const [glowMode, setGlowMode] = useState(true);
 
   return (
-    // Dynamically applies the dark class when dark mode is enabled, allowing for CSS styling based on the theme.
-    <div className={darkMode ? "app dark" : "app"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className={glowMode ? "app glow" : "app"}>
+      {/* Mouse glow effect */}
+      <MouseGlow />
 
-      {/* Main content of the application */}
+      {/* Navigation */}
+      <Navbar glowMode={glowMode} setGlowMode={setGlowMode} />
+
+      {/* System status */}
+      <SystemStatus />
+
+      {/* Main Content */}
       <main>
         <Hero />
+
+        <Dashboard />
 
         <About />
 
@@ -37,7 +49,7 @@ function App() {
         <Contact />
       </main>
 
-      {/* Website footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );

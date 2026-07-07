@@ -9,8 +9,7 @@ function About() {
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
-      <h2>About Me</h2>
-
+      <h2>System Profile</h2>
       <div className="about-content">
         <p>
           I am a Cloud and Network Engineering student at Western Governors

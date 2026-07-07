@@ -31,7 +31,7 @@ function CloudJourney() {
 
   return (
     <section id="cloud">
-      <h2>Cloud & Engineering Journey</h2>
+      <h2>Cloud Journey</h2>
 
       <p>
         I am currently pursuing a degree in Cloud and Network Engineering at

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 function ProjectCard({
-  category = "Software Development",
-  title = "Professional Portfolio",
-  status = "Completed",
-  description = "A professional project showcasing technical skills and continued learning.",
-  technologies = ["React", "JavaScript", "CSS", "Vite", "EmailJS", "HTML"],
+  category,
+  title,
+  status,
+  description,
+  technologies,
   github,
   demo,
 }) {
@@ -21,9 +21,19 @@ function ProjectCard({
         <strong>{category}</strong>
       </p>
 
-      <p className="project-status">{status}</p>
-
       <h3>{title}</h3>
+
+      <span
+        className={`status ${
+          status === "Complete"
+            ? "complete"
+            : status === "In Progress"
+              ? "progress"
+              : "planned"
+        }`}
+      >
+        {status}
+      </span>
 
       <p>{description}</p>
 
@@ -36,13 +46,17 @@ function ProjectCard({
       </div>
 
       <div className="project-links">
-        <a href={github} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
+        {github && github !== "#" && (
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        )}
 
-        <a href={demo} target="_blank" rel="noopener noreferrer">
-          Live Demo
-        </a>
+        {demo && demo !== "#" && (
+          <a href={demo} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </a>
+        )}
       </div>
     </motion.div>
   );

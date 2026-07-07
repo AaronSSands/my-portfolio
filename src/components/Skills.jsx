@@ -44,7 +44,7 @@ function Skills() {
 
   return (
     <section id="skills">
-      <h2>Skills & Technologies</h2>
+      <h2>Tech Stack</h2>
 
       <div className="skills-groups">
         {skillGroups.map((group) => (

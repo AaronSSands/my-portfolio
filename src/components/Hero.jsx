@@ -1,52 +1,72 @@
+import { Cloud, Code2, Network, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <motion.section
-      id="home"
-      className="hero"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="hero-content">
-        {/* Main introduction */}
-        <h1>Aaron Sands</h1>
+    <section className="hero" id="home">
+      <motion.div
+        className="hero-panel"
+        initial={{ opacity: 0, y: 35 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="hero-content">
+          <p className="hero-brand">AS SYSTEMS</p>
 
-        {/* Professional title */}
-        <h2>Developer | Cloud & Network Engineering Student</h2>
+          <h1>Aaron Sands</h1>
 
-        {/* Professional summary */}
-        <p>
-          I build modern web applications while expanding my expertise in cloud
-          computing, networking, and AWS technologies. I enjoy solving problems
-          through technology and continuously developing new skills.
-        </p>
+          <h2>Cloud & Network Engineering Student</h2>
 
-        {/* Professional links */}
-        <div className="hero-buttons">
-          <a href="#projects">View Projects</a>
+          <p className="hero-focus">AWS Focus • React Developer</p>
 
-          <a href="/resume.pdf">Resume</a>
+          <p className="hero-description">
+            I enjoy building reliable software, exploring cloud technologies,
+            and solving technical challenges through hands-on projects and
+            continuous learning.
+          </p>
 
-          <a
-            href="https://github.com/AaronSSands"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+          <div className="hero-actions">
+            <a href="#projects">Explore Projects</a>
+            <a href="/resume.pdf">Download Resume</a>
+            <a href="#contact">Establish Connection</a>
+          </div>
 
-          <a
-            href="https://www.linkedin.com/in/aaronsands1988/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
+          <div className="hero-tech">
+            <span>
+              <Code2 size={16} /> React
+            </span>
+            <span>
+              <Cloud size={16} /> AWS
+            </span>
+            <span>
+              <Network size={16} /> Networking
+            </span>
+            <span>
+              <ShieldCheck size={16} /> Systems
+            </span>
+          </div>
         </div>
-      </div>
-    </motion.section>
+
+        <div className="hero-status">
+          <div className="status-card">
+            <p className="status-label">System Status</p>
+            <h3>
+              <span></span> Online
+            </h3>
+          </div>
+
+          <div className="logo-orb">AS</div>
+
+          <div className="status-card">
+            <p className="status-label">Current Mission</p>
+            <p>
+              Building modern software and cloud infrastructure while growing
+              toward AWS-focused engineering roles.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </section>
   );
 }
 

@@ -1,25 +1,31 @@
-function Navbar({ darkMode, setDarkMode }) {
+import { ShieldCheck } from "lucide-react";
+
+function Navbar({ glowMode, setGlowMode }) {
   return (
     <nav className="navbar">
-      <h2>Aaron Sands</h2>
+      <a href="#home" className="nav-brand">
+        <ShieldCheck size={28} />
+        <div>
+          <span>AS Systems</span>
+          <small> Engineering Portfolio</small>
+        </div>
+      </a>
 
       <div className="nav-links">
         <a href="#home">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#skills">Skills</a>
-
-        <a href="#cloud">Cloud</a>
-
-        <a href="#education">Education</a>
-
+        <a href="#about">Profile</a>
+        <a href="#skills">Tech Stack</a>
+        <a href="#education">Training</a>
         <a href="#projects">Projects</a>
-
         <a href="#contact">Contact</a>
 
-        <button onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️" : "🌙"}
+        <div className="system-status">
+          <span></span>
+          Online
+        </div>
+
+        <button className="theme-toggle" onClick={() => setGlowMode(!glowMode)}>
+          {glowMode ? "Glow On" : "Glow Off"}
         </button>
       </div>
     </nav>
